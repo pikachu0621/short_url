@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>API</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+		<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+		<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/short.css">
+		<script src="js/short.js"></script>
+	</head>
+	<body>
+		<!-- onclick="sll()" -->
+		<main class="mui-content">
+			<div class="text-center mui-content"  id="image_id">
+				<h1 id="title_id">短链生成</h1>
+				<a href="https://github.com/pikachu0621" target="_blank" style="color: #bfbfbf;">
+					<img src="img/github.svg" width="20px" height="20px" />
+					<b>github.com/pikachu0621</b>
+				</a>
+			</div>
+			<!-- style="padding-top: 80px;" -->
+			<div class="container" style="margin-top: 20%;" id="edit2_id">
+				<input type="text" class="form-control" placeholder="请输入网址或短链" id="input_id1">
+				<div class="btn-group container" style="margin-top: 20px;">
+					<button type="button" class="btn btn-primary" onclick="addShort('input_id1')">生成短链</button>
+					<button type="button" class="btn btn-primary" onclick="openUrl('input_id1')">启/禁访问</button>
+					<button type="button" class="btn btn-primary" onclick="checkNum('input_id1')">查访问量</button>
+				</div>
+			</div>
+
+			<div id="toast_id1">
+				<div class="container text-center" id="toast_id" >
+					<strong> 生成成功 </strong>
+					<a href="http://127.0.0.1/short_url/?12dfcz" target="_blank" style="color: #FFFFFF" >http://127.0.0.1/short_url/?12dfcz</a>
+					<button type="button" class="btn btn-primary container" id="toast_copy" onclick="copyTkl()">复制</button>
+				</div>
+			</div>
+
+			<div class="arrow animated bounce" id="main_id1">
+		</main>
+		<footer class="mui-content1">
+			<div class="container" style="bottom: 0px;" id="footer_id">
+				<div class="container mt-3" style="margin-bottom: 20%; display: none;" id="edit_id">
+					<h3 style="color: white; font-size: 40px; font-weight: bold;">短链生成</h3>
+					<p style="font-size: 14px; font-weight: bold;">可生成短链，可关闭短链访问，亦可查看短链访问量。</p>
+
+					<div class="input-group mb-3">
+						<input type="text" class="form-control" placeholder="请输入网址或短链" id="input_id2">
+						<div class="input-group-append">
+							<button class="btn btn-primary" onclick="addShort('input_id2')">生成短链</button>
+							<button class="btn btn-primary" onclick="openUrl('input_id2')">启/禁访问</button>
+							<button class="btn btn-primary" onclick="checkNum('input_id2')">查访问量</button>
+						</div>
+					</div>
+
+				</div>
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="card cardf">
+							<div class="card-body">
+								<h4 class="card-title">早晚图片API</h4>
+								<p class="card-text">
+									这是一个可以自动生成早晚问候图片的API。可高度自定义。<br>已开源到Github上</p>
+								<a href="http://pkpk.run/to_image/" target="_blank" class="btn btn-primary">
+									访问 API
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="card cardf">
+							<div class="card-body">
+								<h4 class="card-title">壁纸APP</h4>
+								<p class="card-text">
+									这只是一个占位工程。<br>已开源到Github上。<br>有兴趣的可以去看看。</p>
+								<a href="https://github.com/pikachu0621/wallpaper" target="_blank" class="btn btn-primary">
+									访问开源
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="card cardf">
+							<div class="card-body">
+								<h4 class="card-title">关于作者</h4>
+								<p class="card-text">
+									让我们亲热亲热 ~_~ <br>QQ：2825436553<br>微信：Pikachu_WeChat
+								</p>
+								<a href="http://pkpk.run" target="_blank" class="btn btn-primary">访问官网</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+	</body>
+</html>
