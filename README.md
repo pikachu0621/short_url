@@ -20,7 +20,7 @@
 
 下载apk
 ---
->[浏览](http://pkpk.run/short/)
+>[浏览地址](http://pkpk.run/short/)
 
 
 效果图
