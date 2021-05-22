@@ -10,7 +10,7 @@ try {
     $str = returnJson(false, $error->getMessage());
 }
 echo $str;
-
+exit();
 
 /**
  * @param $url

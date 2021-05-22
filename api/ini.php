@@ -1,19 +1,28 @@
 <?php 
-//配置必改、
-
-//例{ 127.0.0.1/path/short_url } 填（/path/short_url）
-//127.0.0.1   填（/）
-$GLOBALS['app_path'] = '/short_url';              //安装路径
+//配置必改
 $GLOBALS['servername'] = 'localhost';             //数据库地址
 $GLOBALS['username'] = 'root';                    //数据库名
 $GLOBALS['password'] = 'root';                    //数据库密码
 
-//以下无需要可不改
+//按需要修改
 $GLOBALS['data'] = 'short';                 	  //数据库名
 $GLOBALS['data_table'] = 'short_url';             //数据库表名
 $GLOBALS['key_len'] = 6;                          //Id长度
 $GLOBALS['err_url'] = 'short.html';               //无此短链 将跳转的网址
 $GLOBALS['open_url'] = 'short.html';              //禁止短链 跳转的网址
+
+//无需修改
+$GLOBALS['app_path'] = get_path();                //安装路径
+
+
+//获取安装路径
+function get_path():string
+{
+    if (preg_match('/^\/.*?\//', $_SERVER["PHP_SELF"], $tt))
+        if ($tt[0]!=null && $tt[0] != '')
+            return substr_replace( $tt[0], '', strlen($tt[0])==1?1:strlen($tt[0])-1);
+    return '/';
+}
 
 /**
  * 生成id
@@ -65,6 +74,13 @@ function returnShort($id): string
         return '/^http(s)?:\/\/' . $_SERVER['SERVER_NAME'] . '\\' . $GLOBALS['app_path'] . '/';
     return  ( $_SERVER['HTTPS'] != 'on' ? 'http' : 'https' ) . '://' . $_SERVER['SERVER_NAME'] . $GLOBALS['app_path'] .'/?'. $id;
 }
+
+
+
+
+
+
+
 
 
 
