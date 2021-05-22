@@ -18,13 +18,13 @@
 > 2. `后台管理未做`
 
 
-下载apk
+预览
 ---
 >[浏览地址](http://pkpk.run/short/)
 
 
 效果图
-===
+---
 |PC UI|移动UI|
 |:---:|:---:|
 | ![](img/img.png) | ![](img/img_1.png) | 
