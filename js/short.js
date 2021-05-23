@@ -85,7 +85,7 @@ function addShort(id) {
         return;
     }
 
-    loadXMLDoc('./api/?url=' + input_id.value + '&t=1', function () {
+    loadXMLDoc('./api/?url=' + escape(input_id.value)  + '&t=1', function () {
         if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
             const json = JSON.parse(xmlHttp.responseText);
             if (json["fs"]) {
@@ -107,7 +107,7 @@ function openUrl(id) {
         return;
     }
 
-    loadXMLDoc('./api/?url=' + input_id.value + '&t=2', function () {
+    loadXMLDoc('./api/?url=' + escape(input_id.value)+ '&t=2', function () {
         if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
             const json = JSON.parse(xmlHttp.responseText);
             if (json["fs"]) {
@@ -129,7 +129,7 @@ function checkNum(id) {
         return;
     }
 
-    loadXMLDoc('./api/?url=' + input_id.value + '&t=3', function () {
+    loadXMLDoc('./api/?url=' + escape(input_id.value) + '&t=3', function () {
         if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
             const json = JSON.parse(xmlHttp.responseText);
             if (json["fs"]) {

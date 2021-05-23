@@ -58,7 +58,8 @@ function isUrl($url): bool
 {
     if ($url == null || $url == '')
         return false;
-    if (preg_match('(http(|s)://([\w-]+\.)+[\w-]+(/)?)', $url))
+    if (preg_match('/^([hH][tT]{2}[pP]:\/\/|[hH][tT]{2}[pP][sS]:\/\/)(([A-Za-z0-9-~]+).)+([A-Za-z0-9-~\/])+$/',
+            $url))
         return true;
     return false;
 }
@@ -91,7 +92,7 @@ function isShort(MySqlTool $connect, $url): array{
  * @return string
  */
 function addShort(MySqlTool $content, $long_url): string{
-
+    //echo $long_url;
     //如果存在此长链则返回此长链的短链
     $check_is_url = $content->check_is_url($long_url);
     if ($check_is_url['is'])
