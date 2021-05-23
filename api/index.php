@@ -91,6 +91,7 @@ function isShort(MySqlTool $connect, $url): array{
  * @return string
  */
 function addShort(MySqlTool $content, $long_url): string{
+
     //如果存在此长链则返回此长链的短链
     $check_is_url = $content->check_is_url($long_url);
     if ($check_is_url['is'])
