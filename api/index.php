@@ -58,7 +58,7 @@ function isUrl($url): bool
 {
     if ($url == null || $url == '')
         return false;
-    if (preg_match('/^([hH][tT]{2}[pP]:\/\/|[hH][tT]{2}[pP][sS]:\/\/)(([A-Za-z0-9-~]+).)+([A-Za-z0-9-~\/])+$/',
+    if (preg_match('/^http(s)?:\\/\\/.+/',
             $url))
         return true;
     return false;
