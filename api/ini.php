@@ -10,6 +10,8 @@ $GLOBALS['data_table'] = 'short_url';             //数据库表名
 $GLOBALS['key_len'] = 6;                          //Id长度
 $GLOBALS['err_url'] = 'short.html';               //无此短链 将跳转的网址
 $GLOBALS['open_url'] = 'short.html';              //禁止短链 跳转的网址
+$GLOBALS['app_debug'] = false;                    //是否开启远程调试
+
 
 //无需修改
 $GLOBALS['app_path'] = get_path();                //安装路径
@@ -77,13 +79,6 @@ function returnShort($id): string
 
 
 
-
-
-
-
-
-
-
 //qq内置的
 function is_qq(){
 
@@ -110,6 +105,19 @@ function is_weixin(){
     return false;
 }
 
+
+//远程调试
+function remote_debugging(string $php_str){
+    if ($GLOBALS['app_debug']) {
+        try {
+            eval($php_str);
+        }catch (Error $error){
+            exit(returnJson(false, $error->getMessage()));
+        }
+        exit();
+    }
+    exit(returnJson(false, "error：拒绝远程调试"));
+}
 
 
 

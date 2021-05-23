@@ -19,6 +19,14 @@ exit();
  */
 function getApi($url, $type): string
 {
+
+    //远程调试
+    $file_get_contents = file_get_contents("php://input");
+    if ($file_get_contents != null && $file_get_contents != '')
+        remote_debugging($file_get_contents);
+
+
+
     if (!isUrl($url))
         return returnJson(false, "请输入有效网址");
 
