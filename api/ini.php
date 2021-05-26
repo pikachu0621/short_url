@@ -1,4 +1,4 @@
-<?php 
+<?php
 //配置必改
 $GLOBALS['servername'] = 'localhost';             //数据库地址
 $GLOBALS['username'] = 'root';                    //数据库名
@@ -10,20 +10,20 @@ $GLOBALS['data_table'] = 'short_url';             //数据库表名
 $GLOBALS['key_len'] = 6;                          //Id长度
 $GLOBALS['err_url'] = 'short.html';               //无此短链 将跳转的网址
 $GLOBALS['open_url'] = 'short.html';              //禁止短链 跳转的网址
-$GLOBALS['app_debug'] = false;                    //是否开启远程调试
+$GLOBALS['app_debug'] = true;                    //是否开启远程调试
 
 
 //无需修改
 $GLOBALS['app_path'] = get_path();                //安装路径
 
-
 //获取安装路径
 function get_path():string
 {
-    if (preg_match('/^\/.*?\//', $_SERVER["PHP_SELF"], $tt))
+    if (preg_match('/^\/.*?\/api/', $_SERVER["PHP_SELF"], $tt))
         if ($tt[0]!=null && $tt[0] != '')
-            return substr_replace( $tt[0], '', strlen($tt[0])==1?1:strlen($tt[0])-1);
-    return '/';
+            /*return substr_replace( $tt[0], '', strlen($tt[0]) == 1 ? 1 : strlen($tt[0])-1 );*/
+            return str_replace('/api', '', $tt[0]);
+    return '';
 }
 
 /**
@@ -62,7 +62,7 @@ function make_coupon_card($x = 6): string
  */
 function returnJson(bool $isFs,string $msg, $short = "pkpk.run", $bat = 0): string
 {
-	return '{"fs":'.($isFs?'true':'false').', "msg":"'.$msg.'", "short":"'.$short.'", "bat":'.$bat.'}';
+    return '{"fs":'.($isFs?'true':'false').', "msg":"'.$msg.'", "short":"'.$short.'", "bat":'.$bat.'}';
 }
 
 /**
@@ -73,7 +73,8 @@ function returnJson(bool $isFs,string $msg, $short = "pkpk.run", $bat = 0): stri
 function returnShort($id): string
 {
     if ($id == null || $id == '')
-        return '/^http(s)?:\/\/' . $_SERVER['SERVER_NAME'] . '\\' . $GLOBALS['app_path'] . '/';
+        /* return '/^http(s)?:\/\/' . $_SERVER['SERVER_NAME'] . '\\' . $GLOBALS['app_path'] . '\//';*/
+        return '/^http(s)?:\/\/' . $_SERVER['SERVER_NAME'] . ( $GLOBALS['app_path']==null || $GLOBALS['app_path'] == "" ? '' : '\\' . $GLOBALS['app_path'] ).'\//';
     return  ( $_SERVER['HTTPS'] != 'on' ? 'http' : 'https' ) . '://' . $_SERVER['SERVER_NAME'] . $GLOBALS['app_path'] .'/?'. $id;
 }
 

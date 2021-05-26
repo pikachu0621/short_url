@@ -59,7 +59,7 @@ function isUrl($url): bool
     if ($url == null || $url == '')
         return false;
     if (preg_match('/^http(s)?:\\/\\/.+/',
-            $url))
+        $url))
         return true;
     return false;
 }
@@ -73,7 +73,8 @@ function isUrl($url): bool
  */
 function isShort(MySqlTool $connect, $url): array{
     $r_array = array('is' => false, 'id' => '');
-    if (preg_match(returnShort(null), $url)) {
+    /*echo  returnShort(null);*/
+    if (preg_match( returnShort(null) , $url)) {
         if (preg_match('/\/\?.*/', $url, $tt)) {
             $r_array['id'] = str_replace('/?', '', $tt[0]);
             $r_array['is'] = $connect->check_is_short($r_array['id']);
