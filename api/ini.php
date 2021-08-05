@@ -1,7 +1,7 @@
 <?php
 //配置必改
 $GLOBALS['servername'] = 'localhost';             //数据库地址
-$GLOBALS['username'] = 'root';                    //数据库名
+$GLOBALS['username'] = 'root';                    //用户名
 $GLOBALS['password'] = 'root';                    //数据库密码
 
 //按需要修改
