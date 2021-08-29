@@ -85,10 +85,11 @@ function addShort(id) {
         return;
     }
 
-    loadXMLDoc('./api/?url=' + escape(input_id.value)  + '&t=1', function () {
+    //{"code":200, "msg":"生成成功", "short":"pkpk.run"}
+    loadXMLDoc('./api/?url=' + escape(input_id.value) , function () {
         if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
             const json = JSON.parse(xmlHttp.responseText);
-            if (json["fs"]) {
+            if (json["code"] === 200) {
                 toast(3, json["msg"], json["short"], "复制", 5000);
                 input_id.value = json["short"];
             } else toast(1, json["msg"]);
@@ -98,6 +99,7 @@ function addShort(id) {
 
 }
 
+/*
 function openUrl(id) {
 
 
@@ -142,6 +144,7 @@ function checkNum(id) {
 
 
 }
+*/
 
 
 /**

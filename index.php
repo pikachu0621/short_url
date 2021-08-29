@@ -1,43 +1,47 @@
 <?php
-include_once 'api/ini.php';
-include_once 'api/mysql.php';
+include_once('api/ini.php');
+include_once('api/mysql.php');
 
-
-//如果在qq或微信中打开
-//首先跳转到系统默认
-if (is_qq() || is_weixin()) {
-    echo get_url(  ( $_SERVER['HTTPS'] != 'on' ? 'http://' : 'https://' ) . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'], !is_weixin());
-    exit();
-}
 
 
 //ID获取
 $get_short_id = get_short_id($_SERVER['REQUEST_URI']);
+//$get_short_id['id'] = mb_convert_encoding($get_short_id['id'],"gb2312","utf-8");
+
 //ID获取失败
 if (!$get_short_id['is'])
-    redirect($GLOBALS['err_url']);
+    redirect($GLOBALS['app_info']['pk_err_url']);
+
 
 //数据库连接失败
 $mysql_tool = MySqlTool::getMySqlTool();
 if ($mysql_tool == null || $mysql_tool == '')
-    redirect($GLOBALS['err_url']);
-
+    redirect($GLOBALS['app_info']['pk_err_url']);
+//支持中文
+$get_short_id['id'] = urldecode($get_short_id['id']);
 //没有此短链ID
-if (!$mysql_tool->check_is_short($get_short_id['id']))
-    redirect($GLOBALS['err_url']);
+if (!$mysql_tool->check_is_short($get_short_id['id'])['is'])
+    redirect($GLOBALS['app_info']['pk_err_url']);
 
 //短链已禁止访问
 if (!$mysql_tool->check_is_short_open($get_short_id['id'])) {
     //禁止访问也加次数
     $mysql_tool->add_short_amount($get_short_id['id']);
-    redirect($GLOBALS['open_url']);
+    redirect($GLOBALS['app_info']['pk_open_url']);
 }
 
 
 $check_long_url = $mysql_tool->check_long_url($get_short_id['id']);
 //查询失败
 if (!$check_long_url['is'])
-    redirect($GLOBALS['err_url']);
+    redirect($GLOBALS['app_info']['pk_err_url']);
+
+
+//如果在qq或微信中打开, 并且 短链接开启防红
+if ( (is_qq() || is_weiXin()) && $mysql_tool->is_open_red($get_short_id['id'])) {
+    echo get_url(  ( $_SERVER['HTTPS'] != 'on' ? 'http://' : 'https://' ) . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'], !is_weiXin());
+    exit();
+}
 
 //访问+1
 $mysql_tool->add_short_amount($get_short_id['id']);
@@ -58,6 +62,14 @@ function redirect(string $url)
 function get_short_id(string $path): array
 {
     $r_array = array('is' => false, 'id' => '');
+    if ($GLOBALS['app_info']['pk_is_htaccess']){
+        if(strstr($path, '/')) {
+            $r_array['is'] = true;
+            $r_array['id'] = substr($path, strripos($path, '/') + 1, strlen($path));
+            return $r_array;
+        }
+    }
+
     if (preg_match('/\?.*/', $path, $tt)) {
         $r_array['id'] = str_replace('?', '', $tt[0]);
         $r_array['is'] = true;
@@ -136,7 +148,7 @@ function get_url(string $url, bool $is_weixin): string
             </html>';
 
 }
-?>
+
 
 
 
