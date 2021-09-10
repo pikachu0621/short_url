@@ -106,6 +106,13 @@ function getApi(string $url, string $json): string
         return returnJson(200, '登录成功');
 
 
+    if ($encode_post['data']['type'] == 7)
+        return readInfo();
+
+    if ($encode_post['data']['type'] == 8)
+        return writeInfo($encode_post['data']);
+
+
     $mysql_tool = MySqlTool::getMySqlTool();
     if ($mysql_tool == null || $mysql_tool == '')
         return returnJson(201, "数据库连接失败，请重试");
@@ -159,13 +166,6 @@ function getApi(string $url, string $json): string
             $mysql_tool->check_all($encode_post['data']['page'], $encode_post['data']['num']));
     }
 
-
-    if ($encode_post['data']['type'] == 7)
-        return readInfo();
-
-
-    if ($encode_post['data']['type'] == 8)
-        return writeInfo($encode_post['data']);
 
 
     if ($encode_post['data']['type'] == 9)
