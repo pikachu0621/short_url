@@ -256,7 +256,7 @@ function is_qq(): bool
     }
 
     if (strpos($bro_msg, 'Android')) {
-        if (strpos($bro_msg, 'MQQBrowser') !== false) {
+        if (strpos($bro_msg, 'MQQBrowser') !== false || strpos($bro_msg, 'QQTheme') !== false) {
             if (strpos($bro_msg, ' QQ') !== false)
                 return true;//安卓qq打开
         }
