@@ -21,7 +21,7 @@
 
 预览
 ---
->[浏览地址](https://pkpk.run/) <br>
+>[浏览地址](http://a.pkpk.run/) <br>
 >[APP下载](.res/app.apk)
 
 
