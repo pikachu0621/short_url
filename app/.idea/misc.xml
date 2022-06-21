@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ASMSmaliIdeaPluginConfiguration">
+    <asm skipDebug="true" skipFrames="true" skipCode="false" expandFrames="false" />
+    <groovy codeStyle="LEGACY" />
+  </component>
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/JavaWeb/short/app/app/src/main/res/layout/activity_info.xml" value="0.37135416666666665" />
+        <entry key="..\:/JavaWeb/short/app/app/src/main/res/layout/activity_main.xml" value="0.3567708333333333" />
+        <entry key="..\:/JavaWeb/short/app/app/src/main/res/layout/ui_con_item.xml" value="0.37135416666666665" />
+        <entry key="..\:/JavaWeb/short/app/app/src/main/res/layout/ui_delete.xml" value="0.37135416666666665" />
+        <entry key="..\:/JavaWeb/short/app/app/src/main/res/layout/ui_dialog.xml" value="0.37135416666666665" />
+        <entry key="..\:/JavaWeb/short/app/app/src/main/res/layout/ui_dialog_edit.xml" value="0.25" />
+        <entry key="..\:/JavaWeb/short/app/app/src/main/res/layout/ui_load.xml" value="0.37135416666666665" />
+        <entry key="..\:/JavaWeb/short/app/app/src/main/res/layout/ui_me.xml" value="0.37135416666666665" />
+        <entry key="..\:/JavaWeb/short/app/app/src/main/res/layout/ui_top_item.xml" value="0.37135416666666665" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+</project>

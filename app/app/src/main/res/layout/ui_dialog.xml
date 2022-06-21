@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp"
+    android:orientation="vertical"
+    android:background="@color/background">
+
+
+    <TextView
+        android:id="@+id/d_t1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:textColor="@color/time1"
+        android:gravity="center"/>
+
+    <EditText
+        android:id="@+id/d_e1"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/shape_edit"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:hint="@string/app_main_edit"
+        android:singleLine="true"
+        android:textColor="@color/time2"
+        android:textColorHint="#CCCCCC"
+        android:textSize="13sp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:importantForAutofill="no"
+        tools:ignore="TextFields" />
+
+
+    <EditText
+        android:visibility="gone"
+        android:id="@+id/d_e2"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/shape_edit"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:hint="@string/root_info5"
+        android:singleLine="true"
+        android:textColor="#222222"
+        android:textColorHint="#CCCCCC"
+        android:textSize="13sp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:importantForAutofill="no"
+        tools:ignore="TextFields" />
+
+
+    <EditText
+        android:visibility="gone"
+        android:id="@+id/d_e3"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/shape_edit"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:hint="@string/root_info2"
+        android:singleLine="true"
+        android:textColor="#222222"
+        android:textColorHint="#CCCCCC"
+        android:textSize="13sp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:importantForAutofill="no"
+        tools:ignore="TextFields"/>
+
+
+    <EditText
+        android:visibility="gone"
+        android:id="@+id/d_e4"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/shape_edit"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:hint="@string/safe_sys7"
+        android:singleLine="true"
+        android:textColor="#222222"
+        android:textColorHint="#CCCCCC"
+        android:textSize="13sp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:importantForAutofill="no"
+        tools:ignore="TextFields" />
+
+
+    <LinearLayout
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/d_cn"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/shape_cn"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:gravity="center"
+            android:text="@string/app_cn"
+            android:textColor="@color/time2"
+            android:textStyle="bold"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/d_ok"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:gravity="center"
+            android:text="@string/app_ok"
+            android:textColor="#FFFFFFFF"
+            android:textStyle="bold"
+            android:background="@drawable/shape_ok"
+            android:layout_marginStart="20dp"/>
+    </LinearLayout>
+
+
+</LinearLayout>

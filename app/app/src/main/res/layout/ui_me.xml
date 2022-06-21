@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+
+    <TextView
+        android:id="@+id/d_t1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textColor="@color/time1"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/d_t2"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/me_editApp"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:alpha="0.5"
+        android:textColor="@color/time2"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="10dp">
+
+
+        <TextView
+            android:id="@+id/me_t1"
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/github"
+            android:textColor="@color/time2"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:drawablePadding="10dp"
+            app:drawableTopCompat="@drawable/ic_github" />
+
+        <TextView
+            android:id="@+id/me_t2"
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/my_boke"
+            android:textColor="@color/time2"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:drawablePadding="10dp"
+            app:drawableTopCompat="@drawable/ic_boke" />
+
+
+        <TextView
+            android:id="@+id/me_t3"
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/my_qq"
+            android:textColor="@color/time2"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:drawablePadding="10dp"
+            app:drawableTopCompat="@drawable/ic_qq" />
+
+
+        <TextView
+            android:id="@+id/me_t4"
+            android:drawablePadding="10dp"
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/my_weixin"
+            android:textColor="@color/time2"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:drawableTopCompat="@drawable/ic_weixin" />
+
+    </LinearLayout>
+
+</LinearLayout>

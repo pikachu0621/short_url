@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="20dp"
+        tools:ignore="UselessParent"
+        android:background="@color/background">
+
+        <com.pikachu.shorts.widget.QMUILayout
+            android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            app:qmui_borderColor="@color/time2"
+            app:qmui_shadowColor="@color/time2"
+            app:qmui_radius="25dp"
+            app:qmui_shadowAlpha="0.3"
+            app:qmui_shadowElevation="6dp"
+            app:qmui_showBorderOnlyBeforeL="true">
+
+            <EditText
+                android:paddingHorizontal="20dp"
+                android:id="@+id/pk_edit"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/shape_edit"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:hint="@string/app_main_edit"
+                android:singleLine="true"
+                android:textColor="#222222"
+                android:textColorHint="#CCCCCC"
+                android:textSize="13sp"
+                android:importantForAutofill="no"
+                tools:ignore="TextFields" />
+        </com.pikachu.shorts.widget.QMUILayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:baselineAligned="false">
+
+            <LinearLayout
+                android:id="@+id/pk_lin1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.pikachu.shorts.widget.QMUILayout
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:background="@color/background"
+                    android:gravity="center"
+                    app:qmui_borderColor="@color/time1"
+                    app:qmui_shadowColor="@color/time1"
+                    app:qmui_radius="20dp"
+                    app:qmui_shadowAlpha="0.5"
+                    app:qmui_shadowElevation="14dp"
+                    android:layout_marginVertical="20dp"
+                    app:qmui_showBorderOnlyBeforeL="true">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_generate"
+                        android:contentDescription="@string/todo" />
+                </com.pikachu.shorts.widget.QMUILayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_top_sc"
+                    android:textColor="@color/time2"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/pk_lin2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.pikachu.shorts.widget.QMUILayout
+                    android:layout_marginVertical="20dp"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:background="@color/background"
+                    android:gravity="center"
+                    app:qmui_borderColor="@color/time1"
+                    app:qmui_shadowColor="@color/time1"
+                    app:qmui_radius="20dp"
+                    app:qmui_shadowAlpha="0.5"
+                    app:qmui_shadowElevation="14dp"
+                    app:qmui_showBorderOnlyBeforeL="true">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_off"
+                        android:contentDescription="@string/todo" />
+                </com.pikachu.shorts.widget.QMUILayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_top_off"
+                    android:textColor="@color/time2"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/pk_lin3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.pikachu.shorts.widget.QMUILayout
+                    android:layout_marginVertical="20dp"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:background="@color/background"
+                    android:gravity="center"
+                    app:qmui_borderColor="@color/time1"
+                    app:qmui_shadowColor="@color/time1"
+                    app:qmui_radius="20dp"
+                    app:qmui_shadowAlpha="0.5"
+                    app:qmui_shadowElevation="14dp"
+                    app:qmui_showBorderOnlyBeforeL="true">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_look"
+                        android:contentDescription="@string/todo" />
+                </com.pikachu.shorts.widget.QMUILayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_top_look"
+                    android:textColor="@color/time2"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/pk_lin4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.pikachu.shorts.widget.QMUILayout
+                    android:layout_marginVertical="20dp"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:background="@color/background"
+                    android:gravity="center"
+                    app:qmui_borderColor="@color/time1"
+                    app:qmui_shadowColor="@color/time1"
+                    app:qmui_radius="20dp"
+                    app:qmui_shadowAlpha="0.5"
+                    app:qmui_shadowElevation="14dp"
+                    app:qmui_showBorderOnlyBeforeL="true">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_edit"
+                        android:contentDescription="@string/todo" />
+                </com.pikachu.shorts.widget.QMUILayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_top_edit_s"
+                    android:textColor="@color/time2"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="50dp"
+            android:gravity="center_vertical"
+            tools:ignore="UseCompoundDrawables">
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/ic_record"
+                android:contentDescription="@string/todo" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="@string/app_top_edtir"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:textColor="@color/time1"/>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

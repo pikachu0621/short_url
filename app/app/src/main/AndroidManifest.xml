@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.pikachu.shorts">
+
+    <meta-data
+        android:name="android.notch_support"
+        android:value="true"/>
+    <meta-data
+        android:name="notch.config"
+        android:value="portrait|landscape" />
+
+    <meta-data
+        android:name="android.max_aspect"
+        android:value="2.4" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:resizeableActivity="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.PK短链"
+        tools:ignore="AllowBackup"
+        tools:targetApi="n">
+        <activity android:name=".ui.activity.InfoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden|uiMode"/>
+        <activity android:name=".ui.activity.MainActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden|uiMode">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
